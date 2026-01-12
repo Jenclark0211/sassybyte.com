@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sassybyte.com</title>
     <link rel="stylesheet" href="styles.css"> 
+    <script src="script.js"></script>
 </head>
 <body>
+ <script src="script.js"></script>
   <header>
   <h1>Welcome to Sassybyte.com! </h1>
   <div class="logo-container">
@@ -31,22 +33,7 @@
           <label for="remember-me" id="remember-me-label">Remember Me<input type="checkbox" id="remember-me" value="checked" ></label>
                     <p>Trouble signing in? Check with your admin.</p>
             
- <script>
-        document.getElementById("signin").addEventListener("submit", function(e) {
-            e.preventDefault();
 
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
-            const errorMsg = document.getElementById("errorMsg");
-
-            // Mock validation (replace with server-side check in real apps)
-            if (username === "admin" && password === "1234") {
-                window.location.href = "main.html"; // Redirect to main page
-            } else {
-                errorMsg.textContent = "Invalid username or password.";
-            }
-        });
-    </script>
      </div>
           
    </form>
