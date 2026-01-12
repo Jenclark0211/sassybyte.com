@@ -23,40 +23,32 @@
 <main>
   
   <h3>Members sign in here!</h3>
-    <div id="form-container">
+  <div id="form-container">
       <form id="signin" action="post">
-        <label for="username" id="userlabel">Username   <br> <input type="text" id="username" required><br>
-        <label for="password" id="passwordlabel">Password    <br><input type="password" id="password" required><br>
+        <label for="username" id="userlabel">Username<br> <input type="text" id="username" required><br>
+        <label for="password" id="passwordlabel">Password<br><input type="password" id="password" required><br>
           <button type="submit" id="submit" value="submit" >Log In</button><br>
-          <label for="remember-me" id="remember-me-label">Remember Me       <input type="checkbox" id="remember-me" value="checked" ></label>
+          <label for="remember-me" id="remember-me-label">Remember Me<input type="checkbox" id="remember-me" value="checked" ></label>
                     <p>Trouble signing in? Check with your admin.</p>
+            
+ <script>
+        document.getElementById("signin").addEventListener("submit", function(e) {
+            e.preventDefault();
 
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMsg = document.getElementById("errorMsg");
+
+            // Mock validation (replace with server-side check in real apps)
+            if (username === "admin" && password === "1234") {
+                window.location.href = "main.html"; // Redirect to main page
+            } else {
+                errorMsg.textContent = "Invalid username or password.";
+            }
+        });
+    </script>
      </div>
-            <script>
-            const users = [
-  { username: "admin", password: "password123" },
-  { username: "jennifer", password: "sassybyte2025" },
-  { username: "emily", password: "emily7575" },
-  { username: "michael", password: "Mjen1177#" }, 
-  { username: "bryan", password: "bryan7575" }
-];
-
-document.getElementById("signin").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const user = document.getElementById("username").value.trim();
-  const pass = document.getElementById("password").value.trim();
-
-  const match = users.find(u => u.username === user && u.password === pass);
-
-  if (match) {
-    window.location.href = "https://sassybyte.com/main";
-  } else {
-    alert("Incorrect username or password.");
-  }
-});
-
-         
+          
    </form>
 </main>
   <div id="checkout">
