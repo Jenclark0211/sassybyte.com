@@ -15,7 +15,7 @@ document.getElementById("signin").addEventListener("submit", function (e) {
   const match = users.find(u => u.username === user && u.password === pass);
 
   if (match) {
-    window.location.href = "welcome.html";
+    window.location.href = "sassybyte.com/welcome.html";
   } else {
     alert("Incorrect username or password.");
   }
